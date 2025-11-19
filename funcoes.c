@@ -34,7 +34,7 @@ int inserir_valor(HEAP *h, int valor) {
     h->fim++;
 
     h->itens[h->fim].valor = valor;
-    h->itens[h->fim].chave = valor;  // chave automática = valor
+    h->itens[h->fim].chave = valor;  
 
     bubbling_up(h);
     return 1;
@@ -51,7 +51,8 @@ void bubbling_down(HEAP *h) {
         if (dir <= h->fim && h->itens[dir].chave > h->itens[esq].chave)
             maior = dir;
 
-        if (h->itens[i].chave >= h->itens[maior].chave) break;
+        if (h->itens[i].chave >= h->itens[maior].chave) 
+            break;
 
         ITEM tmp = h->itens[i];
         h->itens[i] = h->itens[maior];
